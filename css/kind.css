@@ -1,0 +1,107 @@
+.hey{
+    background-image: url(https://newsymom.com/wp-content/uploads/2019/06/XD2XKQGWIQI6RA4EXTCUSL7PJE.jpg);
+    
+    height: 500px;
+    background-position:center;
+ border-style: solid;
+   padding: 70px 300px;
+
+    border-radius: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width:3px ;
+    border-right-width: 3px;
+    border-color: rgb(68, 182, 228);
+}
+.helo{
+  
+   background-color: rgb(68, 182, 228);
+    overflow: scroll;
+    width:200px;
+    height: 200px;
+    
+}
+.con{
+    /*width: 20px;
+    height: 20px;*/
+    background-color: bisque;
+}
+#ball1 , #ball2{
+    position: relative;
+   /* width: 10px;
+    height: 10px;*/
+   /* border-radius: 50%;*/
+    transition: all 1s linear;
+}
+
+
+
+body {
+font: 15px/1.3 'Open Sans', sans-serif;
+color: #5e5b64;
+text-align: center;
+}
+a, a:visited {
+outline: none;
+color: #389dc1;
+}
+a:hover {
+text-decoration: none;
+}
+section, footer, header, aside, nav {
+display: block;
+}
+
+nav {
+display: inline-block;
+margin: 60px auto 45px;
+background-color: #47A3FF;
+box-shadow: 0 1px 1px #ccc;
+border-radius: 2px;
+}
+nav a {
+display: inline-block;
+padding: 18px 30px;
+color: #fff !important;
+font-weight: bold;
+font-size: 16px;
+text-decoration: none !important;
+line-height: 1;
+text-transform: uppercase;
+background-color: transparent;
+-webkit-transition: background-color 0.25s;
+-moz-transition: background-color 0.25s;
+transition: background-color 0.25s;
+}
+nav a:first-child {
+border-radius: 2px 0 0 2px;
+}
+nav a:last-child {
+border-radius: 0 2px 2px 0;
+}
+nav.home .home,
+nav.Event .Event,
+nav.Admission .Admission,
+nav.About .About,
+nav.contact .contact {
+background-color: #e35885;
+}
+p {
+font-size: 22px;
+font-weight: bold;
+color: #7d9098;
+}
+p b {
+color: #ffffff;
+display: inline-block;
+padding: 5px 10px;
+background-color: #c4d7e0;
+border-radius: 2px;
+text-transform: uppercase;
+font-size: 18px;
+}
+.menu {
+font-size: 50px;
+font-variant: small-caps;
+color: #FFAD85;
+}

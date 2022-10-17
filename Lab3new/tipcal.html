@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITMD 541-Lab 3</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+       <!-- <h1>Tip Calculator</h1>-->
+       <div class="waviy"><h5>
+        <span style="--i:1">T</span>
+        <span style="--i:2">I</span>
+        <span style="--i:3">P </span>
+        <span style="--i:4"> C</span>
+        <span style="--i:5">A</span>
+        <span style="--i:6">L</span>
+        <span style="--i:7">C</span>
+       <!-- <span style="--i:8">U</span>
+        <span style="--i:9">L</span>
+        <span style="--i:10">A</span>
+        <span style="--i:11">T</span>
+        <span style="--i:12">O</span>
+        <span style="--i:13">R</span>-->
+        
+
+    </h5>
+       </div>
+        <section>
+            <div class="wrapper">
+                <label for="bill" class="lbl">
+                    Bill Amount
+                </label>
+                <div class="input-box">
+                    <span>$</span>
+                    <input type="number" value="0" id="bill" class="val" placeholder="AMOUNT">
+                </div>
+            </div>
+            <div class="wrapper">
+                <span class="lbl">Tip Amount</span>
+                <span id="tip-amount" class="val">
+                    $0
+                </span>
+                
+            </div>
+            <hr>
+            <div class="wrapper">
+                <span class="lbl">Total Amount</span>
+                <span id="total-amount" class="val">
+                    $0
+                </span>
+              
+            </div>
+            <div class="wrapper">
+                <label for="tip" class="lbl">
+                    Tip Percentage
+                </label>
+                <span id="tip-percent" class="val">
+                    0%
+                </span>
+               
+            </div>
+        </section>
+        <section>
+           
+            <label for="tip" class="lbl">
+                Tip 
+            </label><br><br>
+            <input type="range" min="1" id="tip" value="15">
+            
+        </section>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

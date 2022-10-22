@@ -1,9 +1,12 @@
 const sliders = document.querySelectorAll("input[type='range']");
+const billInput = document.getElementById("bill");
 sliders.forEach(function(slider){
+   
+
+
     slider.addEventListener("input",calculateTip);
 });
 
-const billInput = document.getElementById("bill");
 billInput.addEventListener("change",calculateTip);
 
 
@@ -24,7 +27,7 @@ function calculateTip(){
     
     document.getElementById("tip-percent").textContent = `${tipPercent}%`;
   
-
+    }
   
-}
+
 calculateTip();

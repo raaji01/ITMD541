@@ -11,10 +11,14 @@ body{
     background: linear-gradient(to left, #ffccff, #6f6df4)fixed;
    /* background-size: 100% 50%;*/
     background-repeat: no-repeat;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
+
 .container{
     background-color:#ffccff;
-    width: 450px;
+    width: 370px;
     padding: 50px 40px;
     border-radius: 10px;
     position: absolute;

@@ -16,7 +16,10 @@ function calculateTip(){
    
 
     billInput.value = bill.toFixed(2);
-
+    if (billInput.value === "0.00" || isNaN(billInput.value) ) {
+        alert('Enter bill amount, please!')
+    } else {
+       
     let totalTip = parseFloat((bill * (tipPercent/100)).toFixed(2));
     let total = parseFloat((bill + totalTip).toFixed(2));
 
@@ -28,6 +31,6 @@ function calculateTip(){
     document.getElementById("tip-percent").textContent = `${tipPercent}%`;
   
     }
-  
+}
 
 calculateTip();

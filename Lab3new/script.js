@@ -1,8 +1,6 @@
 const sliders = document.querySelectorAll("input[type='range']");
 const billInput = document.getElementById("bill");
 sliders.forEach(function(slider){
-   
-
 
     slider.addEventListener("input",calculateTip);
 });
@@ -16,8 +14,8 @@ function calculateTip(){
    
 
     billInput.value = bill.toFixed(2);
-    if (billInput.value === "0.00" || isNaN(billInput.value) ) {
-        alert('Enter bill amount, please!')
+    if ( isNaN(billInput.value) ) {
+        alert('Enter valid Input')
     } else {
        
     let totalTip = parseFloat((bill * (tipPercent/100)).toFixed(2));

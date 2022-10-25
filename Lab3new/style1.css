@@ -44,7 +44,7 @@ h5 {
     justify-content: space-between;
     margin: 12px 0;
 }
-.lbl{
+.tot{
     font-size: 16px;
     color: #44475b;
     font-weight: 400;
@@ -93,10 +93,10 @@ section:last-child .val,
 section:last-child .lbl{
     color: #4c4af4;
 }
-.waviy {
+.spin {
     position: relative;
   }
-.waviy span {
+.spin span {
     position: relative;
     display: inline-block;
     

@@ -17,8 +17,11 @@ function calculateTip(){
     billInput.value = bill1.toFixed(2);
   
     if ( isNaN(billInput.value) ) {
+        
         alert('Enter valid Input');
-        document.getElementById("bill").textContent =`\$ ${0}`;
+        billInput.value=0;
+       
+        
        
     } else {
        

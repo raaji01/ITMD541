@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="New_weather.css">
+    <title>Weather App</title>
+  
+</head>
+<body>
+    
+    <div class="container">
+        <div class="current-info"style="height: 20px;">
+
+            <div class="city-container" >
+                <div class="city" >
+                   <h3 id="city" style="color:#332200;font-family: Verdana, Geneva, Tahoma, sans-serif;"> Chicago </h3>
+                </div>
+                <div class="temperature" >
+                   <h3 id="temperature" style="color:#332200 ; font-family: Verdana, Geneva, Tahoma, sans-serif;"> 15°c</h3>
+                </div>
+                <div class="search">
+                    <input type="text" class="search_bar" placeholder="Search">
+                    <button ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"></path></svg></button>
+                </div> 
+
+                <div class="others" id="current-weather-items">
+                    <div class="humidity" id="hum">Humidity : </div>
+            <div class="precipitation" id="prec">Precipitation : </div>
+            <img src "" alt="" id="icon"/>
+            <div class="description" id="des">Cloudy</div>
+            <div class="wind" id="win">Windy: km/hr</div>
+            <div class="dayhour" id="day">Day Hour :</div><br>
+                    
+                </div>
+            </div>
+
+           
+        </div>
+
+        
+    </div>
+
+    <div class="future-forecast">
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                
+                <div class="iconie"> <img src "" alt="" id="icon1"/></div>
+                <div class="day" id="mon">Monday</div>
+                <div id="des1" > Cloudy</div>
+                <div class="temp" id="max1">Max : </div>
+                <div class="temp" id="min1">Min : </div>
+                
+            </div>
+            <div class="weather-forecast-item">
+               
+                <div  class="iconie">  <img src "" alt="" id="icon2"/></div>
+                <div class="day" id="tue">Tuesday</div>
+                <div id="des2"> Cloudy</div>
+                <div class="temp" id="max2">Max : </div>
+                <div class="temp" id="min2">Min : </div>
+               
+            </div>
+            <div class="weather-forecast-item">
+                
+                <div  class="iconie"> <img src "" alt="" id="icon3"/></div>
+                <div class="day" id="wed">Wednesday</div>
+                <div id="des3"> Cloudy</div>
+                <div class="temp" id="max3">Max : </div>
+                <div class="temp" id="min3">Min : </div>
+                
+            </div>
+            <div class="weather-forecast-item">
+             
+                <div class="iconie"><img src "" alt="" id="icon4"/></div>
+                <div class="day" id="thur">Thursday</div>
+                <div id="des4"> Cloudy</div>
+                <div class="temp" id="max4">Max : </div>
+                <div class="temp" id="min4">Min : </div>
+            </div>
+            <div class="weather-forecast-item">
+                
+                <div class="iconie"> <img src "" alt="" id="icon5"/></div>
+                <div class="day" id="fri">Friday</div>
+                <div id="des5"> Cloudy</div>
+                <div class="temp" id="max5">Max : </div>
+                <div class="temp" id="min5">Min : </div>
+               
+            </div>
+            <div class="weather-forecast-item">
+                
+                <div class="iconie"><img src "" alt="" id="icon6"/></div>
+                <div class="day" id="sat">Saturday</div>
+                <div id="des6"> Cloudy</div>
+                <div class="temp" id="max6">Max : </div>
+                <div class="temp" id="min6">Min : </div>
+            </div>
+            <div class="weather-forecast-item">
+                
+                <div class="iconie"><img src "" alt="" id="icon7"/></div>
+                <div class="day" id="sun">Sunday</div>
+                <div id="des7"> Cloudy</div>
+                <div class="temp" id="max7">Max : </div>
+                <div class="temp" id="min7">Min : </div>
+                
+            </div>
+            <div class="weather-forecast-item">
+                
+                <div class="iconie"><img src "" alt="" id="icon8"/></div>
+                <div class="day" id="mon2">Monday</div>
+                <div id="des8"> Cloudy</div>
+                <div class="temp" id="max8">Max : </div>
+                <div class="temp" id="min8">Min : </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="New_weather.js"></script>
+</body>
+</html>

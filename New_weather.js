@@ -9,6 +9,7 @@ function success(p){
 
 let apiUrl ="https://weatherdbi.herokuapp.com/data/weather/"+ lat +"," + long +"";
 
+
 //console.log(apiUrl);
 fetchLoc(apiUrl);
 }
@@ -22,11 +23,12 @@ function fetchLoc(apiUrl){
     .then(function(jsonData){
      console.log(jsonData);
       render(jsonData);
+     // match(jsonData);
      
     })
     .catch();
   }
- // fetchLoc(apiUrl);
+ 
 
 function fetchSearch(apiLoc){
     
@@ -37,8 +39,7 @@ function fetchSearch(apiLoc){
     })
     .then(function(data){
      console.log(data);
-      search();
-     
+     render(data);
     })
     .catch();
   }
@@ -47,22 +48,21 @@ function fetchSearch(apiLoc){
     let loc=(document.querySelector(".search_bar").value);
     console.log(loc);
     let apiLoc = " https://weatherdbi.herokuapp.com/data/weather/"+loc+"";
-    
+   // console.log(apiloc);
+ 
     fetchSearch(apiLoc); 
-    
-  };
- document.querySelector(".search button").addEventListener("click", function () {
-    search();
-  });
-
   
-  document.querySelector(".search_bar")
-  document.addEventListener("keyup", function (event) {
-    if (event.key == "Enter") {
-    search();
-    }
-  }); 
+  };
+document.querySelector(".search button").addEventListener("click", function () {
+   search();
+   
+  });
+  let btn = document.getElementById("buttn");
+  btn.addEventListener('click',fetchSearch);
+  
+
 function render(jsonData){
+  
   document.getElementById("city").innerHTML= "Weather in "+jsonData.region;
   document.getElementById("hum").textContent= "Humidity : "+jsonData.currentConditions.humidity;
   document.getElementById("icon").src = jsonData.currentConditions.iconURL;

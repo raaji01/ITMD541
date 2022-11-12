@@ -26,35 +26,7 @@ body{
     flex-wrap: wrap;
     
 }
-/*.date-container{
-    font-weight: 100;
-}
-.date-container .time{
-    font-size: 70px;
-}
 
-.date-container #am-pm{
-    font-size: 30px;
-    margin-left: 20px;
-}
-
-.date-container .date{
-    font-size: 30px;
-}
-
-.place-container{
-    text-align: end;
-}
-
-.place-container .time-zone{
-    font-size: 30px;
-    font-weight: 100;
-}
-
-.place-container .country{
-    font-size: 12px;
-    font-weight: 700;
-}*/
 
 .current-info .others{
     display: flex;
@@ -158,26 +130,7 @@ body{
         font-size: 16px;
     }
 
-   /* .date-container .time{
-        font-size: 50px;
-    }
-
-    .date-container #am-pm{
-        font-size: 20px;
-    }
-
-    .date-container .date{
-        font-size: 20px;
-    }
-
-    .place-container{
-        text-align: end;
-        margin-top: 15px;
-    }
-
-    .place-container .time-zone{
-        font-size: 20px;
-    }*/
+   
 
     .current-info .others{
         padding: 12px;
@@ -196,7 +149,7 @@ body{
 input.search_bar {
     border: none;
     outline: none;
-    padding: 2px 1px;
+    padding: 1px 1px;
     border-radius: 5px;
     background: grey;
     color: white;

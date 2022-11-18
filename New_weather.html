@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,21 +9,25 @@
   
 </head>
 <body>
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
     
     <div class="container">
         <div class="current-info"style="height: 20px;">
 
             <div class="city-container" >
                 <div class="city" >
-                   <h3 id="city" style="color:#332200;font-family: Verdana, Geneva, Tahoma, sans-serif;"> Chicago </h3>
+                   <h3 id="city" style="color:#332200;font-family: Verdana, Geneva, Tahoma, sans-serif;">  </h3>
                 </div>
                 <div class="temperature" >
-                   <h3 id="temperature" style="color:#332200 ; font-family: Verdana, Geneva, Tahoma, sans-serif;"> 15°c</h3>
+                   <h3 id="temperature" style="color:#332200 ; font-family: Verdana, Geneva, Tahoma, sans-serif;"> </h3>
                 </div>
                 <div class="search">
                     <input type="text" class="search_bar" placeholder="Search">
                     <button id="buttn" ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"></path></svg></button>
                 </div> 
+                
 
                 <div class="others" id="current-weather-items">
                     <div class="humidity" id="hum">Humidity : </div>
@@ -121,5 +125,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <script src="New_weather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
 </body>
 </html>

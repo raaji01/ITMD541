@@ -39,6 +39,8 @@ function fetchSearch(apiLoc){
     })
     .then(function(data){
      console.log(data);
+     
+     
      render(data);
     })
     .catch();
@@ -47,6 +49,7 @@ function fetchSearch(apiLoc){
   function search() {
     let loc=(document.querySelector(".search_bar").value);
     console.log(loc);
+    
     let apiLoc = " https://weatherdbi.herokuapp.com/data/weather/"+loc+"";
    // console.log(apiloc);
  
@@ -57,12 +60,24 @@ document.querySelector(".search button").addEventListener("click", function () {
    search();
    
   });
+  document.querySelector(".search_bar").addEventListener("keyup", function (event) {
+    if(event.key == "Enter")
+{
+  search();
+}    
+   });
   let btn = document.getElementById("buttn");
   btn.addEventListener('click',fetchSearch);
   
+  
 
 function render(jsonData){
-  
+  if(jsonData.status == "fail")
+  {
+    document.getElementById("city").textContent = "Sorry API is Down";
+  }
+  else
+  {
   document.getElementById("city").innerHTML= "Weather in "+jsonData.region;
   document.getElementById("hum").textContent= "Humidity : "+jsonData.currentConditions.humidity;
   document.getElementById("icon").src = jsonData.currentConditions.iconURL;
@@ -121,7 +136,8 @@ function render(jsonData){
   document.getElementById("max8").textContent = "Max : "+jsonData.next_days[7].max_temp.c+"°c";
   document.getElementById("min8").textContent = "Min : "+jsonData.next_days[7].min_temp.c+"°c";
 
-
+  
+  }
 
 }
 
@@ -129,6 +145,14 @@ function error(e){
     console.log(e);
     alert('Error: ' + e.message);
 }
+setTimeout(function(){
+  $('.loader_bg').fadeToggle();
+}, 1500);
 
 
 navigator.geolocation.getCurrentPosition(success, error);
+/*for(let i=0;i<jsonData.region.length;i++){
+  if(len!=jsonData.region[i]){
+  alert('Enter valid City');
+  }
+    }*/

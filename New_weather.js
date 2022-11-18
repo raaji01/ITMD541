@@ -72,9 +72,22 @@ document.querySelector(".search button").addEventListener("click", function () {
   
 
 function render(jsonData){
-  if(jsonData.status == "fail")
+  if(jsonData.status == "fail" && jsonData.message== "invalid query")
   {
-    document.getElementById("city").textContent = "Sorry API is Down";
+    document.getElementById("city").textContent = "Invalid Query!";
+    document.getElementById("hum").textContent= "Humidity : ";
+    
+    document.getElementById("temperature").textContent= "Unavailable";
+    document.getElementById("prec").textContent= "Precipitation : ";
+    document.getElementById("des").textContent= "unavailable";
+    document.getElementById("win").textContent= "Wind : ";
+    document.getElementById("day").textContent= "Day Hour : "; 
+    
+  }
+  else if(jsonData.status == "fail" && jsonData.message== "Search by coordinates not available due to excessive use of this feature. Try after sometime or avail other methods available")
+  {
+    document.getElementById("city").textContent = "Sorry API is down,come someother time!";
+  
   }
   else
   {
@@ -87,7 +100,13 @@ function render(jsonData){
   document.getElementById("win").textContent= "Wind : "+jsonData.currentConditions.wind.km +'km/h';
   document.getElementById("day").textContent= "Day Hour : "+jsonData.currentConditions.dayhour;
 
- 
+ nextDays(jsonData);
+  
+  }
+
+}
+function nextDays(jsonData)
+{
   document.getElementById("icon1").src = jsonData.next_days[0].iconURL;
   document.getElementById("mon").textContent = jsonData.next_days[0].day;
   document.getElementById("des1").textContent = jsonData.next_days[0].comment;
@@ -137,8 +156,6 @@ function render(jsonData){
   document.getElementById("min8").textContent = "Min : "+jsonData.next_days[7].min_temp.c+"°c";
 
   
-  }
-
 }
 
 function error(e){
@@ -151,8 +168,3 @@ setTimeout(function(){
 
 
 navigator.geolocation.getCurrentPosition(success, error);
-/*for(let i=0;i<jsonData.region.length;i++){
-  if(len!=jsonData.region[i]){
-  alert('Enter valid City');
-  }
-    }*/

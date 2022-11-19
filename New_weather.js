@@ -1,5 +1,11 @@
 let lat =0;
 let long =0;
+const l = document.querySelector('.preload');
+const emoji = l.querySelector('.emoji');
+
+const emojis = ["🕐", "🕜", "🕑","🕝", "🕒", "🕞", "🕓", "🕟", "🕔", "🕠", "🕕", "🕡", "🕖", "🕢",  "🕗", "🕣", "🕘", "🕤", "🕙",  "🕥", "🕚", "🕦",  "🕛", "🕧"];
+
+const interval = 125;
 function success(p){
     console.log(p);
     lat= p.coords.latitude;
@@ -14,33 +20,37 @@ let apiUrl ="https://weatherdbi.herokuapp.com/data/weather/"+ lat +"," + long +"
 fetchLoc(apiUrl);
 }
 function fetchLoc(apiUrl){
-    
+  //displayLoading()
+  init();
     fetch(apiUrl)
     .then(function(res){
         console.log(res);
+        document.querySelector(".preload").style.display = "none";
       return res.json();
     })
     .then(function(jsonData){
      console.log(jsonData);
+   //  hideLoading()
+ 
       render(jsonData);
      // match(jsonData);
      
     })
+   
     .catch();
   }
  
 
 function fetchSearch(apiLoc){
-    
+  init();
     fetch(apiLoc)
     .then(function(res){
         console.log(res);
+        document.querySelector(".preload").style.display = "none";
       return res.json();
     })
     .then(function(data){
      console.log(data);
-     
-     
      render(data);
     })
     .catch();
@@ -75,11 +85,10 @@ function render(jsonData){
   if(jsonData.status == "fail" && jsonData.message== "invalid query")
   {
     document.getElementById("city").textContent = "Invalid Query!";
+    document.getElementById("des").textContent= "unavailable";
     document.getElementById("hum").textContent= "Humidity : ";
-    
     document.getElementById("temperature").textContent= "Unavailable";
     document.getElementById("prec").textContent= "Precipitation : ";
-    document.getElementById("des").textContent= "unavailable";
     document.getElementById("win").textContent= "Wind : ";
     document.getElementById("day").textContent= "Day Hour : "; 
     
@@ -89,6 +98,9 @@ function render(jsonData){
     document.getElementById("city").textContent = "Sorry API is down,come someother time!";
   
   }
+ /* if(jsonData.status == "fail"){
+    document.getElementById("city").textContent = "Sorry API is down,come someother time!";
+  }*/
   else
   {
   document.getElementById("city").innerHTML= "Weather in "+jsonData.region;
@@ -165,6 +177,18 @@ function error(e){
 setTimeout(function(){
   $('.loader_bg').fadeToggle();
 }, 1500);
+// selecting loading div
+const loader = document.querySelector("#loading");
+const loadEmojis = (arr) => {
+  setInterval(() => {
+    emoji.innerText = arr[Math.floor(Math.random() * arr.length)];
+    //console.log(Math.floor(Math.random() * arr.length))
+  }, interval);
+}
+
+const init = () => {
+loadEmojis(emojis);
+}
 
 
 navigator.geolocation.getCurrentPosition(success, error);

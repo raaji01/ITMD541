@@ -7,7 +7,7 @@
 }
 
 body{
-    background:url('https://c4.wallpaperflare.com/wallpaper/959/314/410/beach-background-hd-wallpaper-preview.jpg');
+    background:url('https://cdn-aghof.nitrocdn.com/LtqqLGkDxnkWeLkvFwGydxSOIAYoFtJz/assets/static/optimized/rev-f2f3b7d/wp-content/uploads/2021/01/shadman-sakib-BoEA8INz7jQ-unsplash-scaled.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     overflow:hidden;
@@ -112,7 +112,14 @@ body{
     font-weight: 100;
     font-size: 12px;
 }
-
+.emoji{
+    font-weight: 45;
+    font-size: 45px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media only screen and  (max-width:730px){
     

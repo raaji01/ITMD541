@@ -18,28 +18,30 @@
 
             <div class="city-container" >
                 <div class="city" >
-                   <h3 id="city" style="color:#332200;font-family: Verdana, Geneva, Tahoma, sans-serif;"> </h3>
+                   <h2 id="city" style="color:#2d2c2c;font-family: Verdana, Geneva, Tahoma, sans-serif;">Welcome to Sky References</h2>
                 </div>
                 <div class="temperature" >
-                   <h3 id="temperature" style="color:#332200 ; font-family: Verdana, Geneva, Tahoma, sans-serif;"> </h3>
+                   <h3 id="temperature" style="color:#2d2c2c ; font-family: Verdana, Geneva, Tahoma, sans-serif;"> Please wait patiently!</h3>
                 </div>
                 <div class="search">
-                    <input type="text" class="search_bar" placeholder="Search">
+                    <input type="text" class="search_bar" placeholder="Search City" style="background-color: grey;">
                     <button id="buttn" ><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"></path></svg></button>
                 </div> 
                 <div id="loading"></div>
                 <div class="preload">
-                    <div class="emoji" id="emoji">🕐</div>
+                    <div class="emoji" id="emoji"></div>
                </div>
 
                 <div class="others" id="current-weather-items" style="width: 300px;">
-                    <div class="humidity" id="hum">Humidity : </div>
-            <div class="precipitation" id="prec">Precipitation : </div>
-            <img src "" alt="" id="icon" style="display: block;"/>
-            <div class="description" id="des">Cloudy</div>
-            <div class="wind" id="win">Windy: km/hr</div>
-            <div class="dayhour" id="day">Day Hour :</div><br>
                     
+            <img src "" alt="" id="icon" onerror="this.src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='"/>
+            <div><h3 class="dayhour" id="day"></h3></div>
+            <div class="humidity" id="hum"> </div>
+            <div class="precipitation" id="prec"> </div>
+           
+            <div class="wind" id="win"></div>
+            
+            <div class="description" id="des"></div>
                 </div>
             </div>
 

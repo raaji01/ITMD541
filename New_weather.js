@@ -42,15 +42,17 @@ function fetchLoc(apiUrl){
  
 
 function fetchSearch(apiLoc){
-  init();
+  
     fetch(apiLoc)
     .then(function(res){
         console.log(res);
-        document.querySelector(".preload").style.display = "none";
+        init();
+        
       return res.json();
     })
     .then(function(data){
      console.log(data);
+     document.querySelector(".preload").style.display = "none";
      render(data);
     })
     .catch();
@@ -93,7 +95,7 @@ function render(jsonData){
     document.getElementById("day").textContent= "Day Hour : "; 
     
   }
-  else if(jsonData.status == "fail" && jsonData.message== "Search by coordinates not available due to excessive use of this feature. Try after sometime or avail other methods available")
+  else if(jsonData.status == "fail" && jsonData.code==500)
   {
     document.getElementById("city").textContent = "Sorry API is down,come someother time!";
   
@@ -104,13 +106,13 @@ function render(jsonData){
   else
   {
   document.getElementById("city").innerHTML= "Weather in "+jsonData.region;
-  document.getElementById("hum").textContent= "Humidity : "+jsonData.currentConditions.humidity;
+  document.getElementById("hum").textContent= "Humidity : "+jsonData.currentConditions.humidity+'💧';
   document.getElementById("icon").src = jsonData.currentConditions.iconURL;
-  document.getElementById("temperature").textContent= jsonData.currentConditions.temp.c +'°c';
-  document.getElementById("prec").textContent= "Precipitation : "+jsonData.currentConditions.precip;
+  document.getElementById("temperature").textContent= jsonData.currentConditions.temp.c +'℃  🌡';
+  document.getElementById("prec").textContent= "Precipitation : "+jsonData.currentConditions.precip+'🌧️';
   document.getElementById("des").textContent= jsonData.currentConditions.comment;
-  document.getElementById("win").textContent= "Wind : "+jsonData.currentConditions.wind.km +'km/h';
-  document.getElementById("day").textContent= "Day Hour : "+jsonData.currentConditions.dayhour;
+  document.getElementById("win").textContent= "Wind : "+jsonData.currentConditions.wind.km +'km/h 💨';
+  document.getElementById("day").textContent= jsonData.currentConditions.dayhour+'🕓';
 
  nextDays(jsonData);
   
@@ -181,8 +183,7 @@ setTimeout(function(){
 const loader = document.querySelector("#loading");
 const loadEmojis = (arr) => {
   setInterval(() => {
-    emoji.innerText = arr[Math.floor(Math.random() * arr.length)];
-    //console.log(Math.floor(Math.random() * arr.length))
+    emoji.innerText = arr[Math.floor(Math.random() * arr.length)]+'Loading, Please wait.........';
   }, interval);
 }
 

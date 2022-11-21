@@ -7,10 +7,10 @@ const emojis = ["🕐", "🕜", "🕑","🕝", "🕒", "🕞", "🕓", "🕟", "
 
 const interval = 125;
 function success(p){
-    console.log(p);
+  //  console.log(p);
     lat= p.coords.latitude;
     long= p.coords.longitude;
-    console.log('Lat: ' + lat + ', Long: ' + long);
+   // console.log('Lat: ' + lat + ', Long: ' + long);
     //document.getElementsByTagName('body')[0].appendChild(document.createTextNode('Lat: ' + lat + ', Long: ' + lon));
 
 let apiUrl ="https://weatherdbi.herokuapp.com/data/weather/"+ lat +"," + long +"";
@@ -24,12 +24,12 @@ function fetchLoc(apiUrl){
   init();
     fetch(apiUrl)
     .then(function(res){
-        console.log(res);
+       // console.log(res);
         document.querySelector(".preload").style.display = "none";
       return res.json();
     })
     .then(function(jsonData){
-     console.log(jsonData);
+    // console.log(jsonData);
    //  hideLoading()
  
       render(jsonData);
@@ -45,22 +45,33 @@ function fetchSearch(apiLoc){
   
     fetch(apiLoc)
     .then(function(res){
-        console.log(res);
+      //  console.log(res);
         init();
         
       return res.json();
     })
     .then(function(data){
-     console.log(data);
+    // console.log(data);
      document.querySelector(".preload").style.display = "none";
-     render(data);
+     if(data.status == "fail" && data.message== "invalid query"){
+      document.getElementById("icon").src =`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`;
+      document.getElementById("city").textContent = "Invalid Query!";
+      document.getElementById("des").textContent= " ";
+      document.getElementById("hum").textContent= " ";
+      document.getElementById("temperature").textContent= "Unavailable";
+      document.getElementById("prec").textContent= " ";
+      document.getElementById("win").textContent= " ";
+      document.getElementById("day").textContent= " "; 
+     }
+     else{
+     render(data);}
     })
     .catch();
   }
   
   function search() {
     let loc=(document.querySelector(".search_bar").value);
-    console.log(loc);
+  //  console.log(loc);
     
     let apiLoc = " https://weatherdbi.herokuapp.com/data/weather/"+loc+"";
    // console.log(apiloc);
@@ -84,15 +95,16 @@ document.querySelector(".search button").addEventListener("click", function () {
   
 
 function render(jsonData){
-  if(jsonData.status == "fail" && jsonData.message== "invalid query")
+ /* if(jsonData.status == "fail" && jsonData.message== "invalid query")
   {
+    document.getElementById("icon").src =`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=`;
     document.getElementById("city").textContent = "Invalid Query!";
-    document.getElementById("des").textContent= "unavailable";
-    document.getElementById("hum").textContent= "Humidity : ";
+    document.getElementById("des").textContent= " ";
+    document.getElementById("hum").textContent= " ";
     document.getElementById("temperature").textContent= "Unavailable";
-    document.getElementById("prec").textContent= "Precipitation : ";
-    document.getElementById("win").textContent= "Wind : ";
-    document.getElementById("day").textContent= "Day Hour : "; 
+    document.getElementById("prec").textContent= " ";
+    document.getElementById("win").textContent= " ";
+    document.getElementById("day").textContent= " "; 
     
   }
   else if(jsonData.status == "fail" && jsonData.code==500)
@@ -100,15 +112,13 @@ function render(jsonData){
     document.getElementById("city").textContent = "Sorry API is down,come someother time!";
   
   }
- /* if(jsonData.status == "fail"){
-    document.getElementById("city").textContent = "Sorry API is down,come someother time!";
-  }*/
+
   else
-  {
+  {*/
   document.getElementById("city").innerHTML= "Weather in "+jsonData.region;
   document.getElementById("hum").textContent= "Humidity : "+jsonData.currentConditions.humidity+'💧';
   document.getElementById("icon").src = jsonData.currentConditions.iconURL;
-  document.getElementById("temperature").textContent= jsonData.currentConditions.temp.c +'℃  🌡';
+  document.getElementById("temperature").textContent= jsonData.currentConditions.temp.c +'℃  🌡 ';
   document.getElementById("prec").textContent= "Precipitation : "+jsonData.currentConditions.precip+'🌧️';
   document.getElementById("des").textContent= jsonData.currentConditions.comment;
   document.getElementById("win").textContent= "Wind : "+jsonData.currentConditions.wind.km +'km/h 💨';
@@ -116,7 +126,7 @@ function render(jsonData){
 
  nextDays(jsonData);
   
-  }
+  //}
 
 }
 function nextDays(jsonData)
@@ -183,7 +193,7 @@ setTimeout(function(){
 const loader = document.querySelector("#loading");
 const loadEmojis = (arr) => {
   setInterval(() => {
-    emoji.innerText = arr[Math.floor(Math.random() * arr.length)]+'Loading, Please wait.........';
+    emoji.innerText = arr[Math.floor(Math.random() * arr.length)]+'Loading, Please wait......';
   }, interval);
 }
 
